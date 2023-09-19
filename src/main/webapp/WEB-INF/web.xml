@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>chapter06</display-name>
+  
+  <servlet>
+  	<servlet-name>dispatcherServlet</servlet-name><!-- 호출할때 이름. 이 xml안에서만 먹히는 이름. -->
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ 	
+ 	<!-- 위치 또는 이름을 변경할 때 : /WEB-INF/dispatcherServlet-servlet.xml -->
+ 	<init-param>
+ 		<param-name>contextConfigLocation</param-name><!-- contextConfigLocation로쓰면 스프링 설정파일 위치를 바꾸겠다는 의미  -->
+ 		<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+ 	</init-param>
+  
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>dispatcherServlet</servlet-name><!-- 프로젝트 전체에 적용됨. -->
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
